@@ -14,3 +14,25 @@ class Table:
         
         if(horizontal_net):
             self.canvas.create_line(0,self.height/2, self.width, self.height/2, width=2, fill=net_color, dash=(15, 23))
+    
+    def draw_rectangle(self, rectangle):
+        x1 = rectangle.x_posn
+        x2 = rectangle.x_posn + rectangle.width
+        y1 = rectangle.y_posn
+        y2 = rectangle.y_posn + rectangle.height
+        c = rectangle.color
+        return self.canvas.create_rectangle(x1, y1, x2, y2, fill=c)
+
+    def draw_oval(self, oval):
+        x1 = oval.x_posn
+        x2 = oval.x_posn + oval.width
+        y1 = oval.y_posn
+        y2 = oval.y_posn + oval.height
+        c = oval.color
+        return self.canvas.create_oval(x1, y1, x2, y2, fill=c)
+    
+
+
+
+
+    
