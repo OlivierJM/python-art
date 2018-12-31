@@ -7,7 +7,7 @@ class Table:
         self.color = color
         
         self.canvas = Canvas(window, bg=self.color, height=self.height, width=self.width)
-        self.canvas.pick()
+        self.canvas.pack()
 
         if(vertical_net):
             self.canvas.create_line(self.width/2, 0, self.width/2, self.height, width=2, fill=net_color, dash=(15, 23))
