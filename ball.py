@@ -40,7 +40,15 @@ class Ball:
         if(self.x_posn >= (self.table.width - (self.width - 3))):
             self.x_posn = (self.table.width - (self.width - 3))
             self.y_speed = -self.y_speed
-        
+                # if the ball hits the top wall:
+        if(self.y_posn <= 3):
+            self.y_posn = 3
+            self.y_speed = -self.y_speed
+        # if it hits bottom wall:
+        if(self.y_posn >= (self.table.height - (self.height - 3))):
+            self.y_posn = (self.table.height - (self.height - 3))
+            self.y_speed = -self.y_speed
+            
         x1 = self.x_posn
         x2 = self.x_posn + self.width
         y1 = self.y_posn

@@ -32,7 +32,14 @@ class Table:
         return self.canvas.create_oval(x1, y1, x2, y2, fill=c)
     
 
-
+    def move_item(self, item, x1, y1, x2, y2):
+        self.canvas.coords(item, x1, y1, x2, y2)
+    
+    def remove_item(self, item):
+        self.canvas.delete(item)
+    
+    def change_item_color(self, item, c):
+        self.canvas.itemconfigure(item, fill=c)
 
 
     

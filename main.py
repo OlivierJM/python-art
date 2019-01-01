@@ -1,12 +1,22 @@
 from tkinter import *
-import table
+import table, ball
+
+x_velocity = 10
+y_velocity = 10
 
 
 window = Tk()
-window.title("My Pong")
+window.title("Testing Out Pong")
 
 
 my_table = table.Table(window, net_color="green", vertical_net=True)
+my_ball = ball.Ball(table=my_table, x_speed=x_velocity, y_speed=y_velocity, width=24, height=24, color="red", x_start=288, y_start=188)
+
+def game_flow():
+    my_ball.move_next()
+    window.after(50, game_flow)
+
+game_flow()
 
 
 #start the program
